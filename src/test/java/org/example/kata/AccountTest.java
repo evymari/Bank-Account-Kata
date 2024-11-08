@@ -42,10 +42,21 @@ class AccountTest {
         assertEquals(1000, balance);
     }
     @Test
-    void when_deposit_1300_negative_aamount_balance_remains_same() {
+    void when_deposit_1300_negative_amount_balance_remains_same() {
         Account account = new Account(1300);
         account.deposit(-500);
         double balance = account.getBalance();
         assertEquals(1300,account.getBalance());
+    }
+    @Test
+    void withdraw_money() {
+        //GIVEN ->  una cuenta
+        Account account = new Account(1000);
+        //WHEN -> accion depositar
+        account.deposit(-50);
+        //THEM -> que al depositar se sume al saldo inicial
+        double balance = account.getBalance();
+        assertEquals(1000, balance);
+
     }
 }
